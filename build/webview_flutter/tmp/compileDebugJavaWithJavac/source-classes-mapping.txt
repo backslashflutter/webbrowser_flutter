@@ -1,0 +1,30 @@
+io/flutter/plugins/webviewflutter/FlutterWebView.java
+ io.flutter.plugins.webviewflutter.FlutterWebView
+ io.flutter.plugins.webviewflutter.FlutterWebView$1
+ io.flutter.plugins.webviewflutter.FlutterWebView$FlutterWebChromeClient
+ io.flutter.plugins.webviewflutter.FlutterWebView$FlutterWebChromeClient$1
+io/flutter/plugins/webviewflutter/ThreadedInputConnectionProxyAdapterView.java
+ io.flutter.plugins.webviewflutter.ThreadedInputConnectionProxyAdapterView
+io/flutter/plugins/webviewflutter/DisplayListenerProxy.java
+ io.flutter.plugins.webviewflutter.DisplayListenerProxy
+ io.flutter.plugins.webviewflutter.DisplayListenerProxy$1
+io/flutter/plugins/webviewflutter/FlutterCookieManager.java
+ io.flutter.plugins.webviewflutter.FlutterCookieManager
+ io.flutter.plugins.webviewflutter.FlutterCookieManager$1
+io/flutter/plugins/webviewflutter/JavaScriptChannel.java
+ io.flutter.plugins.webviewflutter.JavaScriptChannel
+ io.flutter.plugins.webviewflutter.JavaScriptChannel$1
+io/flutter/plugins/webviewflutter/InputAwareWebView.java
+ io.flutter.plugins.webviewflutter.InputAwareWebView
+ io.flutter.plugins.webviewflutter.InputAwareWebView$1
+io/flutter/plugins/webviewflutter/WebViewFlutterPlugin.java
+ io.flutter.plugins.webviewflutter.WebViewFlutterPlugin
+io/flutter/plugins/webviewflutter/WebViewFactory.java
+ io.flutter.plugins.webviewflutter.WebViewFactory
+io/flutter/plugins/webviewflutter/FlutterWebViewClient.java
+ io.flutter.plugins.webviewflutter.FlutterWebViewClient
+ io.flutter.plugins.webviewflutter.FlutterWebViewClient$1
+ io.flutter.plugins.webviewflutter.FlutterWebViewClient$2
+ io.flutter.plugins.webviewflutter.FlutterWebViewClient$OnNavigationRequestResult
+io/flutter/plugins/webviewflutter/BuildConfig.java
+ io.flutter.plugins.webviewflutter.BuildConfig
