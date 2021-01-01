@@ -5,7 +5,7 @@ Webbrowser application designed in flutter with WebView plugin
 ## [Watch it on YouTube](https://youtu.be/kHaOKFafymU)
 
 
-![App UI](AppImages/main.jpg)
+![App UI](appImages/main.jpg)
  
 
 
