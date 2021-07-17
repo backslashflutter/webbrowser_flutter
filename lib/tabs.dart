@@ -1,70 +1,111 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:webbrowser/screens/amazon.dart';
-import 'package:webbrowser/screens/github.dart';
-import 'package:webbrowser/screens/google.dart';
-import 'package:webbrowser/screens/youtube.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'dart:io';
 
-class MyTabs extends StatefulWidget {
+
+class WebBrowser extends StatelessWidget {
   @override
-  _MyTabsState createState() => _MyTabsState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Mypage Manager',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
+    );
+  }
 }
 
-class _MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
-  TabController tabController;
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  WebViewController _webViewController;
+  bool _canGoBack = false;
+  bool _canGoForward = false;
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 4, vsync: this);
-  }
-
-  // dispose function
-  @override
-  void dispose() {
-    super.dispose();
-    tabController.dispose();
+    if (Platform.isAndroid) {
+      WebView.platform = SurfaceAndroidWebView();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Container(
-        height: 50,
-        child: TabBar(
-          controller: tabController,
-          unselectedLabelColor: Colors.grey,
-          labelColor: Colors.blue,
-          labelStyle: TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
-          tabs: <Tab>[
-            Tab(
-              icon: Icon(FontAwesomeIcons.google),
-              text: "Google",
+      appBar: AppBar(
+        title: Text('Mypage Manager'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.refresh),
+            onPressed: _webViewController?.reload,
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: WebView(
+              initialUrl: "https://www.google.com",
+              javascriptMode: JavascriptMode.unrestricted,
+              javascriptChannels: {
+                JavascriptChannel(
+                  name: "Print",
+                  onMessageReceived: (message) {
+                    print(message.message);
+                  },
+                ),
+              },
+              onWebViewCreated: (controller) {
+                _webViewController = controller;
+              },
+              onPageStarted: (value) {},
+              onPageFinished: (value) async {
+                _canGoBack = await _webViewController?.canGoBack();
+                _canGoForward = await _webViewController?.canGoForward();
+                setState(() {});
+              },
+              onWebResourceError: (error) {
+                print("onWebResourceError : $error");
+              },
             ),
-            Tab(
-              icon: Icon(FontAwesomeIcons.amazon),
-              text: "Amazon",
+          ),
+          ListTile(
+            leading: Icon(Icons.copy_rounded),
+            title: Text("ID : abcde"),
+            onTap: () {
+              //IDをコピー　＆　コピーしましたのポップ表示
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.copy_rounded),
+            title: Text("Password : 12345"),
+            onTap: () {
+              //passwordをコピー　＆　コピーしましたのポップ表示
+            },
+          ),
+        ],
+      ),
+      persistentFooterButtons: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: _canGoBack ? _webViewController?.goBack : null,
             ),
-            Tab(
-              icon: Icon(FontAwesomeIcons.youtube),
-              text: "YouTube",
-            ),
-            Tab(
-              icon: Icon(FontAwesomeIcons.github),
-              text: "Github",
+            IconButton(
+              icon: Icon(Icons.arrow_forward),
+              onPressed: _canGoForward ? _webViewController?.goForward : null,
             ),
           ],
         ),
-      ),
-      body: TabBarView(
-        controller: tabController,
-        children: <Widget>[
-          GoogleScreen(),
-          AmazonScreen(),
-          YouTubeScreen(),
-          GithubScreen(),
-        ],
-      ),
+      ],
     );
   }
 }
