@@ -7,22 +7,31 @@ import 'package:flutter/services.dart';
 import 'dart:io';
 
 
+// ignore: must_be_immutable
 class WebBrowser extends StatelessWidget {
+
+  WebBrowser(this.name);
+  String name;
   @override
   Widget build(BuildContext context) {
-    return MyHomePage();
+    return MyHomePage(name);
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  MyHomePage(this.name);
+  String name;
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState(name);
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   WebViewController _webViewController;
   bool _canGoBack = false;
   bool _canGoForward = false;
+
+  _MyHomePageState(this.name);
+  String name;
 
   @override
   void initState() {
@@ -39,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       create: (_) => MainModel()..getLoginInfo(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Mypage Manager'),
+          title: Text("$nameのマイページ"),
         ),
         body: Consumer<MainModel>(builder: (context, model, child) {
           var  loginInfo = model.loginInfo;
