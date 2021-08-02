@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:webbrowser/company.dart';
 import 'package:webbrowser/first_page.dart';
 import 'package:webbrowser/main_model.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -10,19 +11,19 @@ import 'dart:io';
 // ignore: must_be_immutable
 class WebBrowser extends StatelessWidget {
 
-  WebBrowser(this.name);
-  String name;
+  WebBrowser(this.company);
+  Company company;
   @override
   Widget build(BuildContext context) {
-    return MyHomePage(name);
+    return MyHomePage(company);
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage(this.name);
-  String name;
+  MyHomePage(this.company);
+  Company company;
   @override
-  _MyHomePageState createState() => _MyHomePageState(name);
+  _MyHomePageState createState() => _MyHomePageState(company);
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -30,8 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _canGoBack = false;
   bool _canGoForward = false;
 
-  _MyHomePageState(this.name);
-  String name;
+  _MyHomePageState(this.company);
+  Company company;
 
   @override
   void initState() {
@@ -48,15 +49,15 @@ class _MyHomePageState extends State<MyHomePage> {
       create: (_) => MainModel()..getLoginInfo(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("$nameのマイページ"),
+          title: Text("${company.name}のマイページ"),
         ),
         body: Consumer<MainModel>(builder: (context, model, child) {
-          var  loginInfo = model.loginInfo;
+          var  loginInfo = company;
           return Column(
             children: [
               Expanded(
                 child: WebView(
-                  initialUrl: "${loginInfo[1].url}",
+                  initialUrl: "${company.url}",
                   javascriptMode: JavascriptMode.unrestricted,
                   javascriptChannels: {
                     JavascriptChannel(
@@ -82,19 +83,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: Icon(Icons.copy_rounded),
-                title: loginInfo.isNotEmpty ? Text("ID : ${loginInfo[1].ID}"):Text(""),
+                title: Text("ID : ${company.ID}"),
                 onTap: () async {
                   //IDをコピー　＆　コピーしましたのポップ表示　この部分をfirebaseとまず接続したい
-                  final clip = ClipboardData(text : loginInfo[1].ID);
+                  final clip = ClipboardData(text : company.ID);
                   await Clipboard.setData(clip);
                 },
               ),
               ListTile(
                 leading: Icon(Icons.copy_rounded),
-                title: loginInfo.isNotEmpty ? Text("password : *************"):Text(""),
+                title:  Text("password : *************"),
                 onTap: () async {
                   //passwordをコピー　＆　コピーしましたのポップ表示
-                  final clip = ClipboardData(text : loginInfo[1].password);
+                  final clip = ClipboardData(text : company.password);
                   await Clipboard.setData(clip);
                 },
               ),

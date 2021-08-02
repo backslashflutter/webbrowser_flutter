@@ -6,13 +6,12 @@ import 'add_company.dart';
 import 'main_model.dart';
 
 class FirstPage extends StatelessWidget {
-  List<String> companyList = [];
   @override
 
   Widget build(BuildContext context) {
     
     return ChangeNotifierProvider<MainModel>(
-      create: (_) => MainModel()..getLoginInfo(),
+      create: (_) => MainModel()..getLoginInfoRealTime(),
       child: MaterialApp(
         title: 'Mypage Manager',
         theme: ThemeData(
@@ -24,22 +23,58 @@ class FirstPage extends StatelessWidget {
             title: Text("登録されている企業一覧"),
           ),
           body: Consumer<MainModel>(builder: (context, model, child){
+            final companyList = model.loginInfo;
             return ListView(
-                children:  [ 
-                  Card(
-                    child: ListTile(
-                      leading: Icon(Icons.home),
-                      title: Text(model.loginInfo[1].name),
-                      onTap: () {
-                        //何かしらの処理
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => WebBrowser("日産")),
-                        );
-                      },
-                    ),
-                  ),
-                  ]
+                children: companyList.map(
+                 (company) =>  Card(
+                   child: ListTile(
+                        leading: Icon(Icons.home),
+                        title: Text(company.name),
+                        trailing:  IconButton(
+                                      onPressed: () {
+                                        showDialog( 
+                                        context: context,
+                                          builder: (context) {
+                                            return SimpleDialog(
+                                              title: Text("削除しますか？"),
+                                              children: <Widget>[
+                                                // コンテンツ領域
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  children: [
+                                                    SimpleDialogOption(
+                                                      onPressed: (){
+                                                        model.deleteLoginInfo(company);
+                                                        Navigator.pop(context);
+                                                      },
+                                                      child: Text("はい"),
+                                                    ),
+                                                     SimpleDialogOption(
+                                                      onPressed: (){
+                                                        Navigator.pop(context);
+                                                      },
+                                                      child: Text("いいえ"),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                      icon: Icon(Icons.delete_forever,
+                                    ),
+                        ),
+                        onTap: () async {
+                          //何かしらの処理
+                          Navigator.push(
+                            context,
+                            await MaterialPageRoute(builder: (context) => WebBrowser(company)),
+                          );
+                        },
+                      ),
+                 ),
+                  ).toList(),
               );
           }
           ),
