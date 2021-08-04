@@ -1,0 +1,154 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.webbrowser"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+16    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:13:5-79
+17-->[com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:13:22-76
+18
+19    <application
+19-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:3:4-40:19
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.1.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\f4a15a5606c9a028857d8a3e89eefa0f\core-1.1.0\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:5:9-43
+24        android:label="webbrowser" >
+24-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:4:9-35
+25        <activity
+25-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:6:9-34:20
+26            android:name="com.example.webbrowser.MainActivity"
+26-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:7:13-41
+27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+27-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:10:13-163
+28            android:hardwareAccelerated="true"
+28-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:11:13-47
+29            android:launchMode="singleTop"
+29-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:8:13-43
+30            android:theme="@style/LaunchTheme"
+30-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:9:13-47
+31            android:windowSoftInputMode="adjustResize" >
+31-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:12:13-55
+32
+33            <!--
+34                 Specifies an Android theme to apply to this Activity as soon as
+35                 the Android process has started. This theme is visible to the user
+36                 while the Flutter UI initializes. After that, this theme continues
+37                 to determine the Window background behind the Flutter UI.
+38            -->
+39            <meta-data
+39-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:17:13-20:17
+40                android:name="io.flutter.embedding.android.NormalTheme"
+40-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:18:15-70
+41                android:resource="@style/NormalTheme" />
+41-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:19:15-52
+42            <!--
+43                 Displays an Android View that continues showing the launch screen
+44                 Drawable until Flutter paints its first frame, then this splash
+45                 screen fades out. A splash screen is useful to avoid any visual
+46                 gap between the end of Android's launch screen and the painting of
+47                 Flutter's first frame.
+48            -->
+49            <meta-data
+49-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:26:13-29:17
+50                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+50-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:27:15-79
+51                android:resource="@drawable/launch_background" />
+51-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:28:15-61
+52
+53            <intent-filter>
+53-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:30:13-33:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:31:17-68
+54-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:31:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:32:17-76
+56-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:32:27-74
+57            </intent-filter>
+58        </activity>
+59        <!--
+60             Don't delete the meta-data below.
+61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+62        -->
+63        <meta-data
+63-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:37:9-39:33
+64            android:name="flutterEmbedding"
+64-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:38:13-44
+65            android:value="2" />
+65-->C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\android\app\src\main\AndroidManifest.xml:39:13-30
+66
+67        <service
+67-->[:cloud_firestore] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+68            android:name="com.google.firebase.components.ComponentDiscoveryService"
+68-->[:cloud_firestore] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+69            android:directBootAware="true"
+69-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+70            android:exported="false" >
+70-->[com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:19:13-37
+71            <meta-data
+71-->[:cloud_firestore] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+72                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+72-->[:cloud_firestore] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[:cloud_firestore] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+74            <meta-data
+74-->[:firebase_core] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+75                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+75-->[:firebase_core] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[:firebase_core] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+77            <meta-data
+77-->[com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:20:13-22:85
+78                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+78-->[com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:21:17-111
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:22:17-82
+80        </service>
+81
+82        <provider
+82-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+83            android:name="com.google.firebase.provider.FirebaseInitProvider"
+83-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+84            android:authorities="com.example.webbrowser.firebaseinitprovider"
+84-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+85            android:directBootAware="true"
+85-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+86            android:exported="false"
+86-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+87            android:initOrder="100" />
+87-->[com.google.firebase:firebase-common:20.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\3302300f084732ea1b649fcba8a3ed24\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+88
+89        <activity
+89-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\de6f03dc8ff4ac4efa1fbf2128094c04\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+90            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+90-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\de6f03dc8ff4ac4efa1fbf2128094c04\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+91            android:exported="false"
+91-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\de6f03dc8ff4ac4efa1fbf2128094c04\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+92            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+92-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\de6f03dc8ff4ac4efa1fbf2128094c04\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+93
+94        <meta-data
+94-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9d3ebf861ced2bc6fde51a467c749fe4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+95            android:name="com.google.android.gms.version"
+95-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9d3ebf861ced2bc6fde51a467c749fe4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+96            android:value="@integer/google_play_services_version" />
+96-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9d3ebf861ced2bc6fde51a467c749fe4\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+97    </application>
+98
+99</manifest>

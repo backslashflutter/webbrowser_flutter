@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:webbrowser/identification.dart';
 import 'package:webbrowser/tabs.dart';
 
 import 'add_company.dart';
 import 'main_model.dart';
+import "identification.dart";
 
 class FirstPage extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    
+    identificationDevice();
     return ChangeNotifierProvider<MainModel>(
       create: (_) => MainModel()..getLoginInfoRealTime(),
       child: MaterialApp(
