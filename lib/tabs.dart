@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:webbrowser/company.dart';
 import 'package:webbrowser/first_page.dart';
 import 'package:webbrowser/main_model.dart';
+import 'package:webbrowser/save_password_local.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/services.dart';
 import 'dart:io';
@@ -30,6 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   WebViewController _webViewController;
   bool _canGoBack = false;
   bool _canGoForward = false;
+  String pass;
 
   _MyHomePageState(this.company);
   Company company;
@@ -52,7 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text("${company.name}のマイページ"),
         ),
         body: Consumer<MainModel>(builder: (context, model, child) {
-          var  loginInfo = company;
           return Column(
             children: [
               Expanded(
@@ -88,15 +89,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   //IDをコピー　＆　コピーしましたのポップ表示　この部分をfirebaseとまず接続したい
                   final clip = ClipboardData(text : company.ID);
                   await Clipboard.setData(clip);
-                },
+                }, 
               ),
               ListTile(
                 leading: Icon(Icons.copy_rounded),
                 title:  Text("password : *************"),
                 onTap: () async {
                   //passwordをコピー　＆　コピーしましたのポップ表示
-                  final clip = ClipboardData(text : company.password);
-                  await Clipboard.setData(clip);
+
+                    getPassLocal(company.name).then((localPass){
+                    final clip = ClipboardData(text : localPass);
+                    Clipboard.setData(clip);
+                    print(localPass);
+                    });
+                 
                 },
               ),
             ],

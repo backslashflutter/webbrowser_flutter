@@ -206,6 +206,30 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "shared_preferences",
+      "rootUri": "file:///C:/Users/ryoeu/Downloads/flutter_windows_2.2.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.7+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_macos",
+      "rootUri": "file:///C:/Users/ryoeu/Downloads/flutter_windows_2.2.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+11",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_platform_interface",
+      "rootUri": "file:///C:/Users/ryoeu/Downloads/flutter_windows_2.2.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_platform_interface-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
+      "name": "shared_preferences_web",
+      "rootUri": "file:///C:/Users/ryoeu/Downloads/flutter_windows_2.2.3-stable/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/Users/ryoeu/Downloads/flutter_windows_2.2.3-stable/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -290,7 +314,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-08-04T16:16:48.499856Z",
+  "generated": "2021-08-04T20:08:44.568920Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

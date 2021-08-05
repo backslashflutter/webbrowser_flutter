@@ -2,10 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'company.dart';
+import 'identification.dart';
 
 class MainModel extends ChangeNotifier{
 
   List<Company> loginInfo = [];
+  String uuid = "";
   StreamSubscription sub;
 
   Future getLoginInfo() async{
@@ -16,9 +18,10 @@ class MainModel extends ChangeNotifier{
     notifyListeners();
   }
 
-  void getLoginInfoRealTime(){
-    final snapshots = FirebaseFirestore.instance.collection('company').snapshots();
-    sub = snapshots.listen((snapshot){
+  void getLoginInfoRealTime() async{
+    this.uuid = await identificationDevice();
+    final snapshot =  FirebaseFirestore.instance.collection('users').doc(this.uuid).collection('company').snapshots();
+    sub = snapshot.listen((snapshot){
     final docs = snapshot.docs;
     final loginInfo = docs.map((doc) => Company(doc)).toList();
     this.loginInfo = loginInfo;
@@ -28,7 +31,7 @@ class MainModel extends ChangeNotifier{
   }
 
   void deleteLoginInfo(company){
-      FirebaseFirestore.instance.collection('company').doc(company.documentID).delete();
+      FirebaseFirestore.instance.collection('users').doc(this.uuid).collection('company').doc(company.documentID).delete();
   }
 
   // dispose は ChangeNotifierが使われなくなるタイミングでよばれる。

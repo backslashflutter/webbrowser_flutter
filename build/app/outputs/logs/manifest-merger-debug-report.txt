@@ -9,6 +9,7 @@ MERGED from [:cloud_firestore] C:\flutter\webbrowser_flutter_Android\webbrowser_
 MERGED from [:firebase_core] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:device_info] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:integration_test] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:7:1-12:12
+MERGED from [:shared_preferences] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:webview_flutter] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\webview_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:2:1-26:12
 MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9ff82648975b4a418775a9f11f9c8e1b\jetified-firebase-auth-interop-19.0.2\AndroidManifest.xml:2:1-10:12
@@ -138,6 +139,8 @@ MERGED from [:device_info] C:\flutter\webbrowser_flutter_Android\webbrowser_flut
 MERGED from [:device_info] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\device_info\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:integration_test] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-44
 MERGED from [:integration_test] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\integration_test\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-44
+MERGED from [:shared_preferences] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:webview_flutter] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\webview_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:webview_flutter] C:\flutter\webbrowser_flutter_Android\webbrowser_flutter\build\webview_flutter\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-firestore:23.0.1] C:\Users\ryoeu\.gradle\caches\transforms-2\files-2.1\9b84e16e205e131f44404e0ab409936d\jetified-firebase-firestore-23.0.1\AndroidManifest.xml:7:5-9:41

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:webbrowser/save_password_local.dart';
 
 import 'add_model.dart';
 
@@ -9,6 +11,24 @@ class TodoAddPage extends StatelessWidget {
   String name;
   String id;
   String password;
+
+  void savePassLocal(name,password) async {
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  // int counter = (prefs.getInt('counter') ?? 0) + 1;
+  // print('Pressed $counter times.');
+  // await prefs.setInt('counter', counter);
+
+  prefs.setString(name,password);
+  }
+
+  Future<String> getPassLocal(name) async {
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  return prefs.getString(name);
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AddModel>(
@@ -107,7 +127,9 @@ class TodoAddPage extends StatelessWidget {
                           onPressed: () async{
                             // Firebaseに登録する用の関数
                             if(name!=null && url!=null && id!=null && password!=null){
-                            await model.add(name,url,id,password);
+                            await model.add(name,url,id);
+                            savePassLocal(name,password);
+
                                                   showDialog(
                           context: context,
                           builder: (context) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webbrowser/identification.dart';
+import 'package:webbrowser/save_password_local.dart';
 import 'package:webbrowser/tabs.dart';
 
 import 'add_company.dart';
@@ -26,6 +27,9 @@ class FirstPage extends StatelessWidget {
           ),
           body: Consumer<MainModel>(builder: (context, model, child){
             final companyList = model.loginInfo;
+            print("###############");
+            print(model.uuid);
+            print("###############");
             return ListView(
                 children: companyList.map(
                  (company) =>  Card(
@@ -47,6 +51,7 @@ class FirstPage extends StatelessWidget {
                                                     SimpleDialogOption(
                                                       onPressed: (){
                                                         model.deleteLoginInfo(company);
+                                                        deletePassLocal(company.name);
                                                         Navigator.pop(context);
                                                       },
                                                       child: Text("はい"),
