@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webbrowser/tabs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:webbrowser/first_page.dart';
 

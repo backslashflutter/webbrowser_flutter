@@ -12,7 +12,7 @@ Future<String> identificationDevice() async{
   print(androidInfo.androidId);
   return androidInfo.androidId;
   
-} else if(Platform.isIOS) {
+} else{
  // iOSのとき
   print("iOSです！！");
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();

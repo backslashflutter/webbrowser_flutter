@@ -76,7 +76,7 @@ class FirstPage extends StatelessWidget {
                           //何かしらの処理
                           Navigator.push(
                             context,
-                            await MaterialPageRoute(builder: (context) => WebBrowser(company)),
+                            MaterialPageRoute(builder: (context) => WebBrowser(company)),
                           );
                         },
                       ),

@@ -20,4 +20,5 @@ void deletePassLocal(name) async {
 
 SharedPreferences prefs = await SharedPreferences.getInstance();
 prefs.remove(name);
+
 }

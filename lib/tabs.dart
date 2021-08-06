@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webbrowser/company.dart';
-import 'package:webbrowser/first_page.dart';
 import 'package:webbrowser/main_model.dart';
 import 'package:webbrowser/save_password_local.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -21,8 +20,9 @@ class WebBrowser extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+
   MyHomePage(this.company);
-  Company company;
+  final Company company;
   @override
   _MyHomePageState createState() => _MyHomePageState(company);
 }
@@ -52,6 +52,17 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         appBar: AppBar(
           title: Text("${company.name}のマイページ"),
+          // actions: <Widget>[
+          //   IconButton(
+          //     icon: Icon(
+          //       Icons.home,
+          //       color: Colors.white,
+          //     ),
+          //     onPressed: () {
+          //       _webViewController.loadUrl(company.url);
+          //     },
+          //   )
+          // ],
         ),
         body: Consumer<MainModel>(builder: (context, model, child) {
           return Column(
@@ -84,10 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: Icon(Icons.copy_rounded),
-                title: Text("ID : ${company.ID}"),
+                title: Text("ID : ${company.id}"),
                 onTap: () async {
                   //IDをコピー　＆　コピーしましたのポップ表示　この部分をfirebaseとまず接続したい
-                  final clip = ClipboardData(text : company.ID);
+                  final clip = ClipboardData(text : company.id);
                   await Clipboard.setData(clip);
                 }, 
               ),
@@ -116,6 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
               IconButton(
                 icon: Icon(Icons.arrow_back),
                 onPressed: _canGoBack ? _webViewController?.goBack : null,
+              ),
+              IconButton(
+                icon: Icon(Icons.refresh),
+                onPressed: ()async{
+                  _webViewController.reload();
+                }
               ),
               IconButton(
                 icon: Icon(Icons.arrow_forward),

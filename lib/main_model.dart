@@ -37,6 +37,7 @@ class MainModel extends ChangeNotifier{
   // dispose は ChangeNotifierが使われなくなるタイミングでよばれる。
   @override
   void dispose(){
+    sub.cancel();
     super.dispose();
   }
 }

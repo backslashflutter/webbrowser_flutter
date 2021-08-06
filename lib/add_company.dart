@@ -1,33 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:webbrowser/save_password_local.dart';
 
 import 'add_model.dart';
 
 // リスト追加画面用Widget
 class TodoAddPage extends StatelessWidget {
-  String url;
-  String name;
-  String id;
-  String password;
-
-  void savePassLocal(name,password) async {
-
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  // int counter = (prefs.getInt('counter') ?? 0) + 1;
-  // print('Pressed $counter times.');
-  // await prefs.setInt('counter', counter);
-
-  prefs.setString(name,password);
-  }
-
-  Future<String> getPassLocal(name) async {
-
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  return prefs.getString(name);
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +33,7 @@ class TodoAddPage extends StatelessWidget {
                         hintText: '企業名を教えてください',
                       ),
                       onChanged: (value) {
-                          name = value;
+                          model.name = value;
                       }
                     ),
                   ),
@@ -72,7 +49,7 @@ class TodoAddPage extends StatelessWidget {
                         hintText: 'マイページのurlを教えてください',
                       ),
                       onChanged: (value) {
-                          url = value;
+                          model.url = value;
                       }
                     ),
                   ),
@@ -88,7 +65,7 @@ class TodoAddPage extends StatelessWidget {
                         hintText: 'IDを教えてください',
                       ),
                       onChanged: (value) {
-                          id = value;
+                          model.id = value;
                       }
                     ),
                   ),
@@ -96,8 +73,6 @@ class TodoAddPage extends StatelessWidget {
                     padding: const EdgeInsets.all(25.0),
                     child: TextField(
                       enabled: true,
-                
-                      maxLengthEnforced: false,
                       style: TextStyle(color: Colors.black),
                       obscureText: true,
                       maxLines:1 ,
@@ -106,7 +81,7 @@ class TodoAddPage extends StatelessWidget {
                         hintText: 'パスワードを教えてください',
                       ),
                       onChanged: (value) {
-                          password = value;
+                          model.password = value;
                       }
                     ),
                   ),
@@ -126,9 +101,9 @@ class TodoAddPage extends StatelessWidget {
                           // ボタンをクリックした時の処理
                           onPressed: () async{
                             // Firebaseに登録する用の関数
-                            if(name!=null && url!=null && id!=null && password!=null){
-                            await model.add(name,url,id);
-                            savePassLocal(name,password);
+                            if(model.name!=null && model.url!=null && model.id!=null && model.password!=null){
+                            await model.add(model.name,model.url,model.id);
+                            model.savePassLocal(model.name,model.password);
 
                                                   showDialog(
                           context: context,
